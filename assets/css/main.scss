@@ -1,0 +1,86 @@
+body {
+	margin: 0;
+	height: 100vh;
+}
+
+.card {
+	width: 128px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #f5f5f5;
+	margin: 20px;
+	border-radius: 5px;
+	border: 1px solid black;
+	transition: 0.3s;
+
+	p {
+		text-align: center;
+	}
+	img {
+		border-radius: 5px;
+	}
+}
+
+.maximised {
+	p {
+		font-size: 10px;
+	}
+}
+
+#employees {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	max-width: 650px;
+	max-height: 500px;
+	margin: auto;
+	margin-top: 100px;
+}
+
+.description,
+.email {
+	border-bottom: 1px solid #0000002a;
+}
+
+.expand {
+	scale: (1.7);
+}
+
+#navbar {
+	height: 55px;
+	border-bottom: 1px solid black;
+}
+
+.menu {
+	border-bottom: 1px solid black;
+	display: flex;
+	align-items: center;
+	a {
+		margin: 0 5px 0 5px;
+	}
+}
+
+.logo {
+	display: flex;
+	justify-content: center;
+	padding-top: 10px;
+}
+
+.show {
+	display: "";
+}
+
+.hide {
+	display: none;
+}
+
+a {
+	color: black;
+	text-decoration: underline;
+	font-size: 20px;
+}
+
+//Keyframes
