@@ -14,6 +14,7 @@ body {
 	border-radius: 5px;
 	border: 1px solid black;
 	transition: 0.3s;
+	box-shadow: 10px 5px 5px #00000025;
 
 	p {
 		text-align: center;
@@ -84,3 +85,42 @@ a {
 }
 
 //Keyframes
+@keyframes fromLeftToRight {
+	0% {
+		left: 0%;
+		opacity: 0%;
+	}
+	100% {
+		left: 100%;
+		opacity: 100%;
+	}
+}
+
+@keyframes rightToLeft {
+	0% {
+		left: 100%;
+		opacity: 100%;
+	}
+	100% {
+		left: 0%;
+		opacity: 0%;
+	}
+}
+
+.leftToRight {
+	animation: fromLeftToRight 0.3s ease;
+}
+
+.rightToLeft {
+	animation: rightToLeft 0.3s ease;
+}
+
+//Media Queries
+
+/* TABLETS */
+@media screen and (min-width: 700px) and (max-width: 1199px) {
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1200px) {
+}

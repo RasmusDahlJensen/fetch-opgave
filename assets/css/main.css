@@ -14,6 +14,7 @@ body {
   border-radius: 5px;
   border: 1px solid black;
   transition: 0.3s;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.1450980392);
 }
 .card p {
   text-align: center;
@@ -78,4 +79,58 @@ a {
   color: black;
   text-decoration: underline;
   font-size: 20px;
-}/*# sourceMappingURL=main.css.map */
+}
+
+@-webkit-keyframes fromLeftToRight {
+  0% {
+    left: 0%;
+    opacity: 0%;
+  }
+  100% {
+    left: 100%;
+    opacity: 100%;
+  }
+}
+
+@keyframes fromLeftToRight {
+  0% {
+    left: 0%;
+    opacity: 0%;
+  }
+  100% {
+    left: 100%;
+    opacity: 100%;
+  }
+}
+@-webkit-keyframes rightToLeft {
+  0% {
+    left: 100%;
+    opacity: 100%;
+  }
+  100% {
+    left: 0%;
+    opacity: 0%;
+  }
+}
+@keyframes rightToLeft {
+  0% {
+    left: 100%;
+    opacity: 100%;
+  }
+  100% {
+    left: 0%;
+    opacity: 0%;
+  }
+}
+.leftToRight {
+  -webkit-animation: fromLeftToRight 0.3s ease;
+          animation: fromLeftToRight 0.3s ease;
+}
+
+.rightToLeft {
+  -webkit-animation: rightToLeft 0.3s ease;
+          animation: rightToLeft 0.3s ease;
+}
+
+/* TABLETS */
+/* DESKTOP *//*# sourceMappingURL=main.css.map */

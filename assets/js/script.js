@@ -19,7 +19,6 @@ const render = (employee) => {
 	let { email, first_name, last_name, avatar } = employee;
 	//manipulate dom
 	employeeContainer.innerHTML += `
-    <div class="position">
         <div class="card">
             <div class="minimized">
                 <img src="${avatar}">
@@ -32,8 +31,6 @@ const render = (employee) => {
                 Phasellus consectetur ligula quis sem iaculis, eu tincidunt lectus porta.</p>
             </div>
         </div>
-    <div>
-    
     `;
 	const cards = document.querySelectorAll(".card");
 	//when all cards are rendered on the screen then run the eventHandler function
@@ -66,24 +63,45 @@ const expandCard = (card) => {
 const burgerClosed = document.getElementById("burgerMenu");
 const burgerOpen = document.getElementById("burgerMenuOpen");
 const links = document.getElementById("navLinks");
+let isMenuOpen = false;
 
 burgerClosed.addEventListener("click", () => {
-	if (links.classList.contains("hide")) {
-		//Show links
+	if (isMenuOpen === false) {
+		//Show links and play animation
 		links.classList.remove("hide");
+		links.classList.add("leftToRight");
+		if (links.classList.contains("rightToLeft")) {
+			links.classList.remove("rightToLeft");
+		}
 
 		//transition burger menu icon
-		burgerClosed.classList.add("hide");
-		burgerOpen.classList.remove("hide");
+		if (!links.classList.contains("hide")) {
+			burgerClosed.classList.add("hide");
+			burgerOpen.classList.remove("hide");
+			//Change menu state
+			setTimeout(() => {
+				isMenuOpen = true;
+			}, 100);
+		}
 	}
 });
 
 burgerOpen.addEventListener("click", () => {
-	if (!links.classList.contains("hide")) {
-		//Hide links
-		links.classList.add("hide");
-		//Transition burgermenu icon
-		burgerOpen.classList.add("hide");
-		burgerClosed.classList.remove("hide");
+	if (isMenuOpen === true) {
+		//Hide links and remove animation
+		links.classList.remove("leftToRight");
+		links.classList.add("rightToLeft");
+		setTimeout(() => {
+			links.classList.add("hide");
+			//Transition burgermenu icon
+			if (links.classList.contains("hide")) {
+				burgerOpen.classList.add("hide");
+				burgerClosed.classList.remove("hide");
+				//Change menu state
+				setTimeout(() => {
+					isMenuOpen = false;
+				}, 100);
+			}
+		}, 150);
 	}
 });
