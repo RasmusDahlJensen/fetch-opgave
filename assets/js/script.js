@@ -62,7 +62,7 @@ const expandCard = (card) => {
 //Burgermenu
 const burgerClosed = document.getElementById("burgerMenu");
 const burgerOpen = document.getElementById("burgerMenuOpen");
-const links = document.getElementById("navLinks");
+const links = document.getElementById("burgerLinks");
 let isMenuOpen = false;
 
 burgerClosed.addEventListener("click", () => {

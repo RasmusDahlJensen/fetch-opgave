@@ -59,6 +59,7 @@ body {
 	border-bottom: 1px solid black;
 	display: flex;
 	align-items: center;
+	height: 50px;
 	a {
 		margin: 0 5px 0 5px;
 	}
@@ -82,6 +83,12 @@ a {
 	color: black;
 	text-decoration: underline;
 	font-size: 20px;
+}
+
+#desktopLinks {
+	a {
+		display: none;
+	}
 }
 
 //Keyframes
@@ -117,10 +124,28 @@ a {
 
 //Media Queries
 
+/*NAVBAR */
+@media screen and (min-width: 700px) {
+	#burger {
+		display: none;
+	}
+
+	#desktopLinks {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		a {
+			display: inline;
+		}
+	}
+}
+
 /* TABLETS */
 @media screen and (min-width: 700px) and (max-width: 1199px) {
+
 }
 
 /* DESKTOP */
 @media screen and (min-width: 1200px) {
+
 }
